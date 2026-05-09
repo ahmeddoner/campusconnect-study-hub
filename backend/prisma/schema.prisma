@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GroupRole {
+  OWNER
+  MEMBER
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+model User {
+  id            String        @id @default(uuid())
+  name          String
+  email         String        @unique
+  passwordHash  String
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  memberships   GroupMember[]
+  assignedTasks Task[]        @relation("AssignedTasks")
+  createdGroups StudyGroup[]  @relation("CreatedGroups")
+}
+
+model StudyGroup {
+  id          String         @id @default(uuid())
+  name        String
+  description String?
+  subject     String?
+  createdById String
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  createdBy   User           @relation("CreatedGroups", fields: [createdById], references: [id])
+  members     GroupMember[]
+  tasks       Task[]
+  sessions    StudySession[]
+}
+
+model GroupMember {
+  id       String    @id @default(uuid())
+  userId   String
+  groupId  String
+  role     GroupRole @default(MEMBER)
+  joinedAt DateTime  @default(now())
+
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  group    StudyGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, groupId])
+}
+
+model Task {
+  id           String     @id @default(uuid())
+  title        String
+  description  String?
+  status       TaskStatus @default(TODO)
+  dueDate      DateTime?
+  groupId      String
+  assignedToId String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  group        StudyGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  assignedTo   User?      @relation("AssignedTasks", fields: [assignedToId], references: [id])
+}
+
+model StudySession {
+  id          String     @id @default(uuid())
+  title       String
+  description String?
+  startTime   DateTime
+  endTime     DateTime?
+  location    String?
+  groupId     String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  group       StudyGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+}
