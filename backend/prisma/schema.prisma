@@ -35,6 +35,7 @@ model StudyGroup {
   id          String         @id @default(uuid())
   name        String
   description String?
+  joinCode    String         @unique
   subject     String?
   createdById String
   createdAt   DateTime       @default(now())
