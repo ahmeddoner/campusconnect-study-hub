@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const healthRoutes = require("./routes/health.routes");
 const authRoutes = require("./routes/auth.routes");
 const groupRoutes = require("./routes/groups.routes");
+const taskRoutes = require("./routes/tasks.routes");
 
 
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api/health", healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/groups", groupRoutes);
+app.use("/api/groups", taskRoutes);
 
 const PORT = process.env.PORT || 5000;
 
