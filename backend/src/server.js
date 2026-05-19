@@ -13,11 +13,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
 app.use(express.json());
 
-app.use("/api/health", healthRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/health", healthRoutes); 
+app.use("/api/auth", authRoutes); // login/signup/me
+// all below share this prefix (tasks and sessions just add /groupId/tasks on top)
 app.use("/api/groups", groupRoutes);
 app.use("/api/groups", taskRoutes);
 app.use("/api/groups", sessionRoutes);
