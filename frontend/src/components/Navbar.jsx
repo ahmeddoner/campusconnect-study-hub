@@ -14,6 +14,7 @@ function Navbar() {
     <nav>
       <Link to="/">CampusConnect</Link>
       <div>
+        <Link to="/about">About</Link>
         {user ? (
           <>
             <Link to="/dashboard">Dashboard</Link>

@@ -182,3 +182,304 @@
     border-right-color: var(--border);
   }
 }
+
+.page {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.about-page {
+  color: #1f2937;
+}
+
+.about-hero {
+  padding: 48px;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #4f8ef7;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.about-hero p,
+.about-section p {
+  max-width: 760px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.about-section {
+  margin-top: 32px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.about-section h2 {
+  margin-top: 0;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.member-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #f9fafb;
+}
+
+.member-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.member-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-list span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-hero {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    padding: 24px;
+  }
+}
+
+.home-page {
+  color: #1f2937;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 32px;
+  align-items: center;
+  padding: 56px;
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+}
+
+.home-hero h1 {
+  margin: 0 0 18px;
+  max-width: 780px;
+  font-size: clamp(2.25rem, 6vw, 4.8rem);
+  line-height: 1.02;
+}
+
+.home-hero p {
+  max-width: 680px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-link {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.secondary-link {
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  background: #ffffff;
+}
+
+.home-card {
+  padding: 28px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.home-card h2 {
+  margin-top: 0;
+}
+
+.home-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.feature-grid article {
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.feature-grid h3 {
+  margin-top: 0;
+}
+
+.feature-grid p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .home-hero,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 34px;
+  }
+}
+
+/* Atheer public page contrast polish */
+.page.about-page,
+.page.home-page {
+  color: #1f2937;
+}
+
+.about-hero,
+.about-section,
+.home-hero,
+.home-card,
+.feature-grid article {
+  color: #1f2937;
+  background: #ffffff;
+}
+
+.about-hero h1,
+.about-section h2,
+.member-card h3,
+.home-hero h1,
+.home-card h2,
+.feature-grid h3 {
+  color: #111827;
+}
+
+.about-hero p,
+.about-section p,
+.member-card p,
+.home-hero p,
+.home-card li,
+.feature-grid p {
+  color: #374151;
+}
+
+.about-hero,
+.about-section {
+  text-align: left;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+}
+
+.about-hero .eyebrow,
+.home-hero .eyebrow,
+.eyebrow {
+  color: #2563eb;
+}
+
+.member-card {
+  background: #f9fafb;
+  color: #1f2937;
+}
+
+.member-card h3 {
+  color: #111827;
+}
+
+.member-card p {
+  color: #4b5563;
+}
+
+.tech-list span {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+nav a {
+  color: #1f2937;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+nav button {
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
