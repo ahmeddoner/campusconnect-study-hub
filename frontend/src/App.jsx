@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage'
 import AboutPage from './pages/AboutPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import Navbar from './components/Navbar'
+import './App.css'
 
 function App() {
   return (
