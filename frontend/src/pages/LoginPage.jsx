@@ -7,7 +7,7 @@ function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const { login } = useAuth()
+  const { login } = useAuth() // saving the token 
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -15,8 +15,8 @@ function LoginPage() {
     setError('')
     try {
       const data = await post('/auth/login', { email, password })
-      login(data.user, data.token)
-      navigate('/dashboard')
+      login(data.user, data.token)  // Saves the token to localStorage  
+      navigate('/dashboard') // Sends the user to dashboard
     } catch (err) {
       setError(err.message)
     }
