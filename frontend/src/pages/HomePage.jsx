@@ -24,12 +24,12 @@ function HomePage() {
     <main>
       <Hero />
 
-      <section className="px-8 pb-24">
+      <section className="bg-black px-8 pb-24 pt-4">
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-3">
             Everything in one place
           </p>
-          <h2 className="text-3xl font-semibold text-gray-900 tracking-tight">
+          <h2 className="text-3xl font-semibold text-white tracking-tight">
             What you can do with CampusConnect
           </h2>
         </div>
@@ -38,13 +38,13 @@ function HomePage() {
           {features.map(({ icon: Icon, title, description }) => (
             <article
               key={title}
-              className="p-6 rounded-2xl border border-gray-200 bg-white hover:border-blue-200 hover:shadow-md transition-all"
+              className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                <Icon className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                <Icon className="w-5 h-5 text-white/70" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{description}</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+              <p className="text-sm text-white/50 leading-relaxed">{description}</p>
             </article>
           ))}
         </div>

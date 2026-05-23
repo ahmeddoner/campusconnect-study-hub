@@ -52,7 +52,7 @@ function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@university.edu"
                 required
-                className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors"
+                className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:bg-white focus:outline-none transition-colors"
               />
             </label>
 
@@ -64,14 +64,14 @@ function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors"
+                className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-gray-900 focus:bg-white focus:outline-none transition-colors"
               />
             </label>
 
             <button
               type="submit"
               disabled={loading}
-              className="mt-2 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60 transition-colors cursor-pointer border-none"
+              className="mt-2 w-full rounded-md bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-black disabled:opacity-60 transition-colors cursor-pointer border-none"
             >
               {loading ? 'Logging in…' : 'Log in'}
             </button>
@@ -79,7 +79,7 @@ function LoginPage() {
 
           <p className="mt-5 text-center text-sm text-gray-500">
             No account?{' '}
-            <Link to="/signup" className="text-blue-600 font-medium hover:underline">
+            <Link to="/signup" className="text-gray-900 font-medium hover:underline">
               Sign up
             </Link>
           </p>

@@ -23,7 +23,7 @@ function AboutPage() {
   return (
     <main className="px-8 py-16 max-w-4xl mx-auto">
       <section className="mb-12 text-center">
-        <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-3">
+        <p className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-3">
           Group 6
         </p>
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight mb-4">
@@ -66,7 +66,7 @@ function AboutPage() {
           {stack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium"
+              className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm font-medium"
             >
               {tech}
             </span>
