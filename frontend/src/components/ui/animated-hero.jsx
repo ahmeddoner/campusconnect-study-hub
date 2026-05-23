@@ -21,24 +21,29 @@ function Hero() {
   }, [titleNumber, titles])
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-black">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+        <div className="flex gap-8 py-24 lg:py-44 items-center justify-center flex-col">
+
           <div>
-            <Button variant="secondary" size="sm" className="gap-4">
+            <Button
+              variant="secondary"
+              size="sm"
+              className="gap-4 bg-white/10 text-white/70 hover:bg-white/15 border border-white/20"
+            >
               Built for university students <BookOpen className="w-4 h-4" />
             </Button>
           </div>
 
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-semibold text-gray-900">
+            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-semibold text-white">
               <span>Study groups made</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold text-blue-600"
+                    className="absolute font-semibold text-white"
                     initial={{ opacity: 0, y: '-100' }}
                     transition={{ type: 'spring', stiffness: 50 }}
                     animate={
@@ -53,7 +58,7 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-gray-500 max-w-2xl text-center">
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-white/50 max-w-2xl text-center">
               CampusConnect helps university students collaborate more clearly —
               group tasks, study sessions, and member management all in one shared
               workspace.
@@ -62,17 +67,40 @@ function Hero() {
 
           <div className="flex flex-row gap-3">
             {user ? (
-              <Button size="lg" className="gap-4" asChild>
-                <Link to="/dashboard">
-                  Go to dashboard <MoveRight className="w-4 h-4" />
-                </Link>
-              </Button>
+              <>
+                <Button
+                  size="lg"
+                  className="gap-4 border-white/20 text-white bg-transparent hover:bg-white/10"
+                  variant="outline"
+                  asChild
+                >
+                  <Link to="/about">About</Link>
+                </Button>
+                <Button
+                  size="lg"
+                  className="gap-4 bg-white text-black hover:bg-white/90"
+                  asChild
+                >
+                  <Link to="/dashboard">
+                    Go to dashboard <MoveRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+              </>
             ) : (
               <>
-                <Button size="lg" className="gap-4" variant="outline" asChild>
+                <Button
+                  size="lg"
+                  className="gap-4 border-white/20 text-white bg-transparent hover:bg-white/10"
+                  variant="outline"
+                  asChild
+                >
                   <Link to="/login">Log in</Link>
                 </Button>
-                <Button size="lg" className="gap-4" asChild>
+                <Button
+                  size="lg"
+                  className="gap-4 bg-white text-black hover:bg-white/90"
+                  asChild
+                >
                   <Link to="/signup">
                     Get started <MoveRight className="w-4 h-4" />
                   </Link>
@@ -80,6 +108,7 @@ function Hero() {
               </>
             )}
           </div>
+
         </div>
       </div>
     </div>
