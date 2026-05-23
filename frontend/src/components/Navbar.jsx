@@ -11,19 +11,51 @@ function Navbar() {
   }
 
   return (
-    <nav>
-      <Link to="/">CampusConnect</Link>
-      <div>
-        <Link to="/about">About</Link>
+    <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white">
+      <Link
+        to="/"
+        className="text-lg font-bold text-gray-900 no-underline hover:text-blue-600 transition-colors"
+      >
+        CampusConnect
+      </Link>
+
+      <div className="flex items-center gap-6">
+        <Link
+          to="/about"
+          className="text-sm text-gray-600 no-underline hover:text-gray-900 transition-colors"
+        >
+          About
+        </Link>
+
         {user ? (
           <>
-            <Link to="/dashboard">Dashboard</Link>
-            <button onClick={handleLogout}>Logout</button>
+            <Link
+              to="/dashboard"
+              className="text-sm text-gray-600 no-underline hover:text-gray-900 transition-colors"
+            >
+              Dashboard
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="text-sm px-4 py-2 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors border-none cursor-pointer"
+            >
+              Logout
+            </button>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+            <Link
+              to="/login"
+              className="text-sm text-gray-600 no-underline hover:text-gray-900 transition-colors"
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="text-sm px-4 py-2 rounded-full bg-blue-600 text-white font-semibold no-underline hover:bg-blue-700 transition-colors"
+            >
+              Sign Up
+            </Link>
           </>
         )}
       </div>
