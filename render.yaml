@@ -17,9 +17,8 @@ services:
       - key: CLIENT_ORIGIN
         sync: false
 
-  - type: web
+  - type: static
     name: campusconnect-frontend
-    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
