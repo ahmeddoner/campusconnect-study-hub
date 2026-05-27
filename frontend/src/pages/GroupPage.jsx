@@ -102,7 +102,7 @@ function TasksTab({ groupId }) {
   const handleStatusCycle = async (task) => {
     const nextStatus = STATUS_CYCLE[task.status]
     try {
-      const data = await put(`/tasks/${task.id}`, { status: nextStatus })
+      const data = await put(`/groups/tasks/${task.id}`, { status: nextStatus })
       setTasks((prev) => prev.map((t) => (t.id === task.id ? data.task : t)))
     } catch (err) {
       alert(err.message)
@@ -112,7 +112,7 @@ function TasksTab({ groupId }) {
   const handleDelete = async (taskId) => {
     if (!confirm('Delete this task?')) return
     try {
-      await del(`/tasks/${taskId}`)
+      await del(`/groups/tasks/${taskId}`)
       setTasks((prev) => prev.filter((t) => t.id !== taskId))
     } catch (err) {
       alert(err.message)
@@ -212,7 +212,7 @@ function SessionsTab({ groupId }) {
   const handleDelete = async (sessionId) => {
     if (!confirm('Delete this session?')) return
     try {
-      await del(`/sessions/${sessionId}`)
+      await del(`/groups/sessions/${sessionId}`)
       setSessions((prev) => prev.filter((s) => s.id !== sessionId))
     } catch (err) {
       alert(err.message)
