@@ -4,6 +4,19 @@ A full-stack web app for university students to create study groups, track tasks
 
 **Live app:** https://campusconnect-frontend-3mx7.onrender.com/
 
+Built as part of a web development course at Kristianstad University, May 2026.
+
+---
+
+## How it works
+
+1. Sign up for an account
+2. Create a study group — a unique 6-character join code is generated automatically
+3. Share the code with your classmates so they can join
+4. Inside the group, create tasks and assign statuses (To Do → In Progress → Done)
+5. Schedule study sessions with a time, location, or meeting link
+6. The group owner can manage members and update group settings
+
 ---
 
 ## Team
