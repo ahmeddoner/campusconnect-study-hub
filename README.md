@@ -12,8 +12,8 @@ A full-stack web app for university students to create study groups, track tasks
 |---|---|
 | Ahmed Al Temimi | [@ahmeddoner](https://github.com/ahmeddoner) |
 | Ibrahim Al Jamous | [@ibbex14](https://github.com/ibbex14) |
-| Abdul Rehman Khan | — |
-| Atheer Sadoon | — |
+| Abdul Rehman Khan | [@AbdulRehman1977](https://github.com/AbdulRehman1977) |
+| Atheer Sadoon | [@laserchapo](https://github.com/laserchapo) | 
 
 ---
 
