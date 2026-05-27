@@ -36,9 +36,9 @@ function Hero() {
           </div>
 
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-semibold text-white">
+            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-normal text-white">
               <span>Study groups made</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+              <span className="relative flex w-full justify-center overflow-hidden text-center pb-4 pt-1 md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
@@ -59,7 +59,7 @@ function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-white/50 max-w-2xl text-center">
-              CampusConnect helps university students collaborate more clearly —
+              CampusConnect helps university students collaborate more clearly 
               group tasks, study sessions, and member management all in one shared
               workspace.
             </p>
